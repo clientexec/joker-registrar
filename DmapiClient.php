@@ -155,7 +155,7 @@ class DMAPIClient {
     private function parseResponseList($data) {
         $result = array();
         $separator = " ";
-        if (isset($this->Header['Separator']) && $this->Header['Separator'] == 'TAB') {
+        if (isset($this->Header['Separator']) && $this->Header['Separator'] == 'TAB' || substr($this->Command, 0, 3) === "v2/") {
             $separator = "\t";
         }
         $columnTitles = Array();
